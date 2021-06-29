@@ -8,6 +8,7 @@ export AWS_REGION="eu-west-1"
 # Run terratest
 for dir in $(find ${BASE_PATH} -maxdepth 1 -mindepth 1 -type d -printf '%f\n'); do
   if [[ -f "${BASE_PATH}/${dir}/test/test.sh" ]]; then
+    chmod +x ${BASE_PATH}/${dir}/test/test.sh
     ./${BASE_PATH}/${dir}/test/test.sh
   fi
 done
