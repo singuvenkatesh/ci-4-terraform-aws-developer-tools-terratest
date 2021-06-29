@@ -14,6 +14,7 @@ phases:
       golang: 1.14
       python: 3.8
     commands:
+      - chmod +x ${BASE_PATH}/install.sh
       - ./${BASE_PATH}/install.sh
   pre_build:
     commands:
@@ -23,6 +24,7 @@ phases:
       - source ${BASE_PATH}/prebuild.sh
   build:
     commands:
+      -  chmod +x ${BASE_PATH}/test.sh
       - ./${BASE_PATH}/test.sh
   post_build:
     commands:
